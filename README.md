@@ -25,6 +25,7 @@ There are two parts to this program :
 > - **content** : Injected in music.youtube.com along with the whole extension, acts as a data retriever, observing DOM and media session changes and collects the data from the music every changes and formats the collected data to json.
 > - **background** : Acts as a bridge between the browser and Vencord, sends updated fetched data via local HTTP to the discord plugin.
 > - **popup** : User interface, shows the current state of the music, connection and possible errors.
+
 > **Note:** Album art is fetched directly from the YouTube Music page or extracted URLs and no official YouTube Music API is used; DOM extraction + browser network data is the source.
 
 **Vencord Plugin**
