@@ -7,13 +7,10 @@
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType, PluginNative } from "@utils/types";
 import { ApplicationAssetUtils, FluxDispatcher } from "@webpack/common";
-
 const Native = VencordNative.pluginHelpers.YTMusicRPC as PluginNative<typeof import("./native")>;
-
 let applicationId = "";
 let pollInterval: ReturnType<typeof setInterval> | null = null;
 let lastDataHash = "";
-
 async function getApplicationAsset(key: string): Promise<string> {
     if (!applicationId) return "";
     return (await ApplicationAssetUtils.fetchAssetIds(applicationId, [key]))[0];
@@ -33,7 +30,6 @@ function setActivity(activity: any | null) {
 
 async function createActivity(data: any) {
     if (!applicationId) return null;
-
     let largeImage: string | undefined;
     if (data.thumbnail) {
         let url = data.thumbnail.replace("http://", "https://");
@@ -49,7 +45,6 @@ async function createActivity(data: any) {
     }
 
     const songUrl = data.url || "https://music.youtube.com";
-
     const activity: any = {
         application_id: applicationId,
         name: "YouTube Music",
@@ -100,11 +95,9 @@ async function pollForUpdates() {
 
         const data = await Native.getLatestData();
         if (!data) return;
-
         const hash = hashData(data);
         if (hash === lastDataHash) return;
         lastDataHash = hash;
-
         const activity = await createActivity(data);
         setActivity(activity);
         console.log("[YTM-RPC] Updated:", data.title);
@@ -117,7 +110,6 @@ export default definePlugin({
     name: "YTMusicRPC",
     description: "Display your YouTube Music activity as Discord status. Works with the YTM-RPC browser extension.",
     authors: [Devs.Ven],
-
     options: {
         applicationId: {
             type: OptionType.STRING,
@@ -142,7 +134,6 @@ export default definePlugin({
         }
 
         console.log("[YTM-RPC] Starting with Application ID:", applicationId);
-
         if (!Native || !Native.startServer) {
             console.error("[YTM-RPC] Native module not loaded! Make sure native.ts exists.");
             return;
@@ -159,7 +150,6 @@ export default definePlugin({
 
     stop() {
         console.log("[YTM-RPC] Stopping...");
-
         if (pollInterval) {
             clearInterval(pollInterval);
             pollInterval = null;
