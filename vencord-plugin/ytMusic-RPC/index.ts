@@ -11,7 +11,7 @@ import { ApplicationAssetUtils, FluxDispatcher } from "@webpack/common";
 export default definePlugin({
     name: "ytMusic-RPC",
     description: "YouTube Music Discord Rich Presence using Vencord and Chromium extension.",
-    authors: [Devs.louchat],
+    authors: [Devs.louchaaat],
 });
 
 const Native = VencordNative.pluginHelpers.YTMusicRPC as PluginNative<typeof import("./native")>;
