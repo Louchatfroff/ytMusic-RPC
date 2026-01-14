@@ -12,6 +12,18 @@ const Native = VencordNative.pluginHelpers.YTMusicRPC as PluginNative<typeof imp
 
 let applicationId = "";
 let pollInterval: ReturnType<typeof setInterval> | null = null;
+let lastDataHash = "";
+
+function hashData(data: any) {
+    return [
+        data.title,
+        data.artist,
+        data.isPaused,
+        Math.floor(data.currentTime),
+        Math.floor(data.duration),
+        data.url
+    ].join("|");
+}
 
 async function getApplicationAsset(key: string): Promise<string> {
     if (!applicationId) return "";
@@ -83,17 +95,22 @@ async function pollForUpdates() {
         const shouldClear = await Native.getShouldClear();
         if (shouldClear) {
             setActivity(null);
-            console.log("[YTM-RPC] Cleared activity");
+            lastDataHash = "";
             return;
         }
 
         const data = await Native.getLatestData();
-        if (data) {
-            const activity = await createActivity(data);
-            setActivity(activity);
-            console.log("[YTM-RPC] Updated:", data.title);
-        }
+        if (!data) return;
+
+        const hash = hashData(data);
+        if (hash === lastDataHash) return; // skip if nothing changed
+        lastDataHash = hash;
+
+        const activity = await createActivity(data);
+        setActivity(activity);
+        console.log("[YTM-RPC] Updated:", data.title);
     } catch (e) {
+        console.error("[YTM-RPC] Poll error:", e);
     }
 }
 
