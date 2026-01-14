@@ -9,7 +9,7 @@ A Vencord plugin that displays your YouTube Music activity on Discord. No separa
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/) (v18+)
 - [pnpm](https://pnpm.io/) (`npm i -g pnpm`)
-> **Last warning (if you still didn't do it:** Update the prerequisites to the **latest** stable release to avoid any problem during the process or use of this program !
+> **Last warning (if you still didn't do it):** Update the prerequisites to the **latest** stable release to avoid any problem during the process or use of this program !
 
 ## Brainless install, feel your luck :) [TESTED ONLY ON W11 !!!]
 
