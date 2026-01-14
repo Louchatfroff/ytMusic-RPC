@@ -56,7 +56,7 @@ pnpm inject
 
 2. Copy the plugin folder:
    ```bash
-   mkdir -p src/userplugins
+   xcopy "YTmusic-RPC\vencord-plugin" "src\userplugins\YTMusic-RPC" /E /I
    ```
 
    The folder should contain:
@@ -65,7 +65,7 @@ pnpm inject
 
 3. Rebuild Vencord:
    ```bash
-   pnpm build
+   pnpm build --dev
    ```
 
 4. Restart Discord (Ctrl+R or Settings → Vencord → Restart Client)
