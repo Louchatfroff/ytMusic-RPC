@@ -1,6 +1,6 @@
 # YTM-RPC - YouTube Music Discord Rich Presence
 
-Display your YouTube Music activity on Discord.
+Display your YouTube Music activity on Discord using the vencord plugin loader, it lets discord freely interact with the browser extension via HTTP requests, the whole program is made to have little to no delay on the timestamps and on the music transition, althought it waits on ad, it doesnt break and comes right back.
 
 ## Features
 
