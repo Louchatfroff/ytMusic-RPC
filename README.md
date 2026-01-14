@@ -34,7 +34,7 @@ No separate server needed! The plugin runs inside Discord.
    ```bash
    git clone https://github.com/Vendicated/Vencord
    cd Vencord
-   pnpm i
+   pnpm install --frozen-lockfile
    pnpm build
    pnpm inject
    ```
