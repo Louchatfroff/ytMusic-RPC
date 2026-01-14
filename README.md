@@ -25,7 +25,7 @@ The one going to achieve **parity** with spotify rich presence...
 
 ## Setup
 
-Choose **one** of the two options below:
+**Replicate** the following instructions **precisely**:
 
 ---
 
