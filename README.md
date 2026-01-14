@@ -6,8 +6,8 @@ Display your YouTube Music activity on Discord.
 
 - Shows current song, artist, and album art on Discord
 - Progress bar with elapsed/remaining time
-- Play/pause status indicator
-- Vencord plugin (no server)
+- Actual album cover
+- Vencord plugin (no server required, just vencord, built from source)
 
 ## Requirements
 
