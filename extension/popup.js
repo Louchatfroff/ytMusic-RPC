@@ -71,7 +71,7 @@ elements.openYTMBtn.addEventListener('click', (e) => {
 
 elements.githubLink.addEventListener('click', (e) => {
   e.preventDefault();
-  chrome.tabs.create({ url: 'https://github.com/Louchatfroff/YTM-RPC' });
+  chrome.tabs.create({ url: 'https://github.com/Louchatfroff/YTMusic-RPC' });
 });
 
 elements.creatorLink.addEventListener('click', (e) => {
