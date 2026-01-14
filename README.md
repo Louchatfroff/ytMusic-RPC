@@ -45,7 +45,7 @@ No separate server needed! The plugin runs inside Discord.
 
 3. **Install the plugin**
    - Copy the `vencord-plugin` folder to `Vencord/src/userplugins/ytmusicRpc`
-   - Rebuild: `pnpm build`
+   - Rebuild: `pnpm build --dev`
    - Restart Discord
 
 4. **Configure**
