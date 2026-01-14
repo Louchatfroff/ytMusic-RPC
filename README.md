@@ -85,7 +85,23 @@ YTM-RPC/
     ├── content.js
     └── popup.html/js
 ```
+## Project Logic
 
+```
+YouTube Music (The Start)    → Input, user plays music in YT Music
+          │
+          ▼
+Browser Extension (Browser)  → Informational backend, detects song info, play state, and thumbnails; sends updates to the native server
+          │
+          ▼
+Native HTTP Server (Discord) → Logic backend, minimal local server; stores latest data and exposes it to Vencord plugin
+          │
+          ▼
+Vencord Plugin (Discord)     → Client, reads latest music data, calculates timestamps, updates Discord activity
+          │
+          ▼
+Discord Status  (Goal)       → Output, displays current song, artist, album art, and buttons in Discord
+```
 ## Troubleshooting
 
 ### Extension not connecting
