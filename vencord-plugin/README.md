@@ -10,17 +10,17 @@ A Vencord plugin that displays your YouTube Music activity on Discord. No separa
 - [Node.js](https://nodejs.org/) (v18+)
 - [pnpm](https://pnpm.io/) (`npm i -g pnpm`)
 
-## Brainless install, feel your luck :)
+## Brainless install, feel your luck :) [TESTED ONLY ON W11 !!!]
 
 ```bash
 git clone https://github.com/Vendicated/Vencord
 cd Vencord
+git clone https://github.com/Louchatfroff/YTMusic-RPC
+mkdir -p src\userplugins\YTMusic-RPC
+xcopy "YTmusic-RPC\vencord-plugin" "src\userplugins\YTMusic-RPC" /E /I
 pnpm install --frozen-lockfile
 pnpm build --dev
 pnpm inject
-git clone https://github.com/Louchatfroff/YTMusic-RPC
-mkdir -p src/userplugins
-mkdir -p src/userplugins
 ```
 
 ## Installation
@@ -37,9 +37,6 @@ cd Vencord
 pnpm install --frozen-lockfile
 pnpm build --dev
 pnpm inject
-git clone https://github.com/Louchatfroff/YTMusic-RPC
-mkdir -p src/userplugins
-mkdir -p src/userplugins
 ```
 
 > **Note:** Vencord uses pnpm. Do NOT use npm or yarn!
@@ -106,7 +103,7 @@ mkdir -p src/userplugins
 When updating the plugin, copy the new files and rebuild:
 
 ```bash
-pnpm build
+pnpm build --dev
 ```
 
 Then restart Discord.
