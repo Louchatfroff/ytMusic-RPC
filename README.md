@@ -30,11 +30,11 @@ There are two parts to this program :
 
 **Vencord Plugin**
 > Uses 2 different scripts: native and index, working together to finalize the data flow :
-> - Hooking into Discord’s internal IPC to update rich presence.
-> - Maintaining local state of most recent metadata from the extension.
-> - Performs smart timestamp synchronization: incrementing elapsed time every second, correctly handling seeking/ads/pauses, resyncing after drift or external state changes.
-> - Uses the extracted data to compute: startTimestamp, endTimestamp, cover art URL, artist & title strings.
-> - Sends one presence update per tick or on state change, respecting Discord’s rate limits (hence the very small delay on the RPC itself)
+> - Hook into Discord’s internal IPC to update rich presence.
+> - Maintain local state of most recent metadata from the extension.
+> - Perform smart timestamp synchronization: incrementing elapsed time every second, correctly handling seeking/ads/pauses, resyncing after drift or external state changes.
+> - Use the extracted data to compute: startTimestamp, endTimestamp, cover art URL, artist & title strings.
+> - Send one presence update per tick or on state change, respecting Discord’s rate limits (hence the very small delay on the RPC itself)
 > - Vencord leverages internal Rich Presence hooks: similar logic to discord-rpc but native in-process, avoiding external RPC daemons or socket listeners and generates presence that Discord desktop app displays as user activity.
 
 
