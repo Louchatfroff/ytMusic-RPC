@@ -154,7 +154,7 @@ Discord Status  (Goal)       → Output, displays current song, artist, album ar
 > Intended behavior to avoid desync and loss of precision from Discord auto advancing timestamps.
 
 **Buttons not showing.**
-> Okay this is an issue, currently working on it, I'm just bad in typescript, sorry, sincerly.
+> Okay this is an issue, currently working on it, I'm just bad at this, sorry, sincerly.
 
 ## Future features
 
